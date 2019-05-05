@@ -3,8 +3,10 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\core",
+    "\\src\\app\\messages",
     "\\src\\app\\model"
   ],
-  "SelectedNode": "\\src\\app\\model\\repository.model.ts",
+  "SelectedNode": "\\src\\app\\messages\\message.component.html",
   "PreviewInSolutionExplorer": false
 }
