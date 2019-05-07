@@ -4,9 +4,7 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\core",
-    "\\src\\app\\messages",
-    "\\src\\app\\model"
+    "\\src\\app\\messages"
   ],
-  "SelectedNode": "\\src\\app\\core\\form.component.html",
   "PreviewInSolutionExplorer": false
 }

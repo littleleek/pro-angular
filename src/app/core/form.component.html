@@ -1,7 +1,6 @@
 <div class="bg-primary text-white p-2"
      [class.bg-warning]="editing">
   <h5>{{editing ? 'Edit' : 'Create'}} Product</h5>
-  Last Event: {{stateEvents | async | formatState}}
 </div>
 
 <form novalidate
@@ -37,7 +36,8 @@
     {{editing ? 'Save' : 'Create'}}
   </button>
   <button type="reset"
-          class="btn btn-secondary m-1">
+          class="btn btn-secondary m-1"
+          routerLink="/">
     Cancel
   </button>
 </form>

@@ -17,14 +17,17 @@
         Delete
       </button>
       <button class="btn btn-warning btn-sm"
-              (click)="editProduct(item.id)">
+              (click)="editProduct(item.id)"
+              [routerLink]="['/form', 'edit', item.id, {
+                name: item.name, category: item.category, price: item.price}]">
         Edit
       </button>
     </td>
   </tr>
 </table>
 <button class="btn btn-primary m-1"
-        (click)="createProduct()">
+        (click)="createProduct()"
+        routerLink="/form/create">
   Create New Product
 </button>
 <button class="btn btn-danger"

@@ -12,13 +12,15 @@ import { MessageService } from '../messages/message.service';
 import { Message } from '../messages/message.model';
 import { Model } from '../model/repository.model';
 import { MODES } from './sharedState.model';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     ModelModule,
-    MessageModule
+    MessageModule,
+    RouterModule
   ],
   declarations: [
     TableComponent,
@@ -30,13 +32,7 @@ import { MODES } from './sharedState.model';
     provide: SHARED_STATE,
     deps: [MessageService, Model],
     useFactory: (messageService, model) => {
-      let subject = new Subject<SharedState>();
-      subject.subscribe(m => messageService.reportMessage(
-        new Message(MODES[m.mode] + (m.id != undefined
-          ? ` ${model.getProduct(m.id).name}`
-          : '')))
-      );
-      return subject;
+      return new Subject<SharedState>();
     }
   }]
 })
