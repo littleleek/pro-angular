@@ -4,7 +4,7 @@ import { Product } from '../model/product.model';
 import { Model } from '../model/repository.model';
 import { MODES, SharedState, SHARED_STATE } from './sharedState.model';
 import { Observable } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'paForm',
@@ -17,7 +17,8 @@ export class FormComponent {
 
   constructor(
     private model: Model,
-    activeRoute: ActivatedRoute) {
+    activeRoute: ActivatedRoute,
+    private router: Router) {
 
     this.editing = activeRoute.snapshot.params['mode'] == 'edit';
     let id = activeRoute.snapshot.params['id'];
@@ -41,8 +42,7 @@ export class FormComponent {
   submitForm(form: NgForm) {
     if (form.valid) {
       this.model.saveProduct(this.product);
-      this.product = new Product();
-      form.reset();
+      this.router.navigateByUrl('/');
     }
   }
 
