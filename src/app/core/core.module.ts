@@ -11,6 +11,9 @@ import { MessageService } from '../messages/message.service';
 import { Message } from '../messages/message.model';
 import { Model } from '../model/repository.model';
 import { RouterModule } from '@angular/router';
+import { ProductCountComponent } from './productCount.component';
+import { CategoryCountComponent } from './categoryCount.component';
+import { NotFoundComponent } from './notFound.component';
 
 @NgModule({
   imports: [
@@ -23,7 +26,10 @@ import { RouterModule } from '@angular/router';
   declarations: [
     TableComponent,
     FormComponent,
-    StatePipe
+    StatePipe,
+    ProductCountComponent,
+    CategoryCountComponent,
+    NotFoundComponent
   ],
   exports: [ModelModule, TableComponent, FormComponent]
 })
